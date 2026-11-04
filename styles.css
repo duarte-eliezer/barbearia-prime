@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --preto: #15120f;
+    --escuro: #211a15;
+    --marrom: #38271c;
+    --dourado: #c49a52;
+    --creme: #e8dcc5;
+    --branco: #f5efe5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #100d0b;
+    border-bottom: 1px solid rgba(196,154,82,0.35);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--branco);
+}
+
+.logo span {
+    color: var(--dourado);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: var(--creme);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    color: var(--dourado);
+}
+
+/* NAVEGAÇÃO DAS TELAS */
+
+.tela {
+    display: none;
+    min-height: 75vh;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+/* TELA INICIAL */
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    background:
+        linear-gradient(90deg, rgba(15,11,8,0.95), rgba(15,11,8,0.68), rgba(15,11,8,0.35)),
+        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-conteudo {
+    max-width: 620px;
+}
+
+.subtitulo {
+    color: var(--dourado);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--dourado);
+}
+
+.hero-conteudo > p:not(.subtitulo) {
+    color: var(--creme);
+    line-height: 1.9;
+    font-size: 15px;
+    max-width: 510px;
+    margin-bottom: 35px;
+}
+
+/* BOTÕES */
+
+.botao-principal,
+.botao-secundario,
+.botao-voltar {
+    padding: 16px 27px;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-principal {
+    background: var(--dourado);
+    color: #17110a;
+    border: 1px solid var(--dourado);
+}
+
+.botao-principal:hover {
+    background: transparent;
+    color: var(--dourado);
+}
+
+.botao-secundario,
+.botao-voltar {
+    background: transparent;
+    color: var(--dourado);
+    border: 1px solid var(--dourado);
+}
+
+.botao-secundario:hover,
+.botao-voltar:hover {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+/* SOBRE */
+
+.sobre {
+    padding: 90px 10%;
+    text-align: center;
+    background: var(--escuro);
+}
+
+.sobre h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(26px, 4vw, 39px);
+    max-width: 750px;
+    margin: 0 auto 25px;
+    line-height: 1.4;
+}
+
+.sobre > p:not(.subtitulo) {
+    color: #c5b9a7;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* DIFERENCIAIS */
+
+.diferenciais {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 65px 8%;
+    background: var(--preto);
+}
+
+.diferenciais div {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid rgba(196,154,82,0.3);
+}
+
+.diferenciais h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--dourado);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.diferenciais p {
+    color: #c5b9a7;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* TELA DE SERVIÇOS */
+
+#servicos {
+    padding: 70px 8%;
+}
+
+.titulo-tela {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-tela h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--dourado);
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 15px;
+}
+
+.titulo-tela > p:last-child {
+    color: #c5b9a7;
+    font-size: 14px;
+}
+
+.lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 950px;
+    margin: 0 auto 45px;
+}
+
+.servico-card {
+    padding: 30px;
+    background: var(--escuro);
+    border: 1px solid rgba(196,154,82,0.35);
+    transition: 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--dourado);
+}
+
+.servico-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--dourado);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.servico-card p {
+    color: #c5b9a7;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.servico-card strong {
+    color: var(--branco);
+    font-size: 17px;
+}
+
+.centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* AGENDAMENTO */
+
+#agendamento {
+    padding: 70px 8%;
+}
+
+.formulario {
+    max-width: 560px;
+    margin: auto;
+    padding: 35px;
+    background: var(--escuro);
+    border: 1px solid rgba(196,154,82,0.4);
+}
+
+.formulario label {
+    display: block;
+    color: var(--dourado);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 20px 0 9px;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 14px;
+    background: #15120f;
+    border: 1px solid #57432d;
+    color: var(--branco);
+    font-family: inherit;
+    outline: none;
+}
+
+
+
+.formulario input:focus,
+.formulario select:focus {
+    border-color: var(--dourado);
+}
+
+.formulario > .botao-principal {
+    width: 100%;
+    margin-top: 25px;
+}
+
+#horarios-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#horarios-container button {
+    padding: 12px 17px;
+    background: #15120f;
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+    cursor: pointer;
+}
+
+#horarios-container button:hover {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+.dados-cliente {
+    margin-top: 30px;
+}
+
+.dados-cliente h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--dourado);
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+#mensagem {
+    margin-top: 20px;
+    color: var(--dourado);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #100d0b;
+    border-top: 1px solid rgba(196,154,82,0.3);
+}
+
+footer .logo {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #a99a85;
+    font-size: 11px;
+    line-height: 2;
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+        flex-direction: column;
+        padding: 20px 12px;
+    }
+
+    nav {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav button {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 60px 7%;
+        background-position: 60% center;
+    }
+
+    .hero-conteudo > p:not(.subtitulo) {
+        font-size: 13px;
+    }
+
+    .sobre {
+        padding: 65px 7%;
+    }
+
+    .diferenciais {
+        grid-template-columns: 1fr;
+        padding: 45px 7%;
+    }
+
+    #servicos,
+    #agendamento {
+        padding: 55px 6%;
+    }
+
+    .lista-servicos {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario {
+        padding: 24px 18px;
+    }
+
+    .botao-principal,
+    .botao-secundario,
+    .botao-voltar {
+        width: 100%;
+    }
+
+    .centralizado {
+        flex-direction: column;
+    }
+}
+
+.formulario input,
+.formulario select {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.formulario input[type="date"] {
+    width: 100%;
+    min-width: 0;
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+}
