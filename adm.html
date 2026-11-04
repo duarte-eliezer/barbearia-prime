@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | Barbearia Prime</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="adm.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <section id="login" class="login-container">
+
+        <div class="login-box">
+
+            <h1 class="login-logo">BARBEARIA PRIME</h1>
+
+            <p>Painel Administrativo</p>
+
+            <form id="form-login">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Senha"
+                    required
+                >
+
+                <button type="submit" class="botao-principal">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p id="mensagem-login"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAINEL ADMINISTRATIVO -->
+
+    <main id="painel">
+
+        <header class="topo-admin">
+
+            <div>
+                <h1>BARBEARIA PRIME</h1>
+                <p>Painel Administrativo</p>
+            </div>
+
+            <button id="botao-sair" class="botao-sair">
+                Sair
+            </button>
+
+        </header>
+
+
+        <div class="conteudo-admin">
+
+            <h2 class="titulo-secao">
+                Visão geral
+            </h2>
+
+
+            <!-- RESUMO -->
+
+            <section class="resumo">
+
+                <div class="resumo-card">
+                    <h3>Total de agendamentos</h3>
+                    <strong id="total-agendamentos">0</strong>
+                </div>
+
+                <div class="resumo-card">
+                    <h3>Pendentes</h3>
+                    <strong id="total-pendentes">0</strong>
+                </div>
+
+                <div class="resumo-card">
+                    <h3>Confirmados</h3>
+                    <strong id="total-confirmados">0</strong>
+                </div>
+
+            </section>
+
+
+            <!-- MENU -->
+
+            <nav class="menu-admin">
+
+                <button
+                    class="ativo"
+                    data-area="agendamentos"
+                >
+                    Agendamentos
+                </button>
+
+                <button data-area="agenda">
+                    Agenda
+                </button>
+
+                <button data-area="servicos">
+                    Serviços
+                </button>
+
+                <button data-area="barbeiros">
+                    Barbeiros
+                </button>
+
+            </nav>
+
+
+            <!-- AGENDAMENTOS -->
+
+            <section
+                id="area-agendamentos"
+                class="area-admin"
+            >
+
+                <h2>Agendamentos recebidos</h2>
+
+                <div class="tabela-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Telefone</th>
+                                <th>Serviço</th>
+                                <th>Barbeiro</th>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-agendamentos">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- AGENDA -->
+
+            <section
+                id="area-agenda"
+                class="area-admin"
+                hidden
+            >
+
+                <h2>Agenda diária</h2>
+
+                <p class="descricao-agenda">
+                    Consulte os agendamentos de cada dia.
+                </p>
+
+                <div class="filtro-agenda">
+
+                    <input
+                        type="date"
+                        id="data-agenda"
+                    >
+
+                    <button
+                        type="button"
+                        id="buscar-agenda"
+                        class="botao-principal"
+                    >
+                        Buscar agenda
+                    </button>
+
+                </div>
+
+
+                <section class="resumo resumo-agenda">
+
+                    <div class="resumo-card">
+                        <h3>Total do dia</h3>
+                        <strong id="agenda-total">0</strong>
+                    </div>
+
+                    <div class="resumo-card">
+                        <h3>Confirmados</h3>
+                        <strong id="agenda-confirmados">0</strong>
+                    </div>
+
+                    <div class="resumo-card">
+                        <h3>Pendentes</h3>
+                        <strong id="agenda-pendentes">0</strong>
+                    </div>
+
+                </section>
+
+
+                <div
+                    id="lista-agenda"
+                    class="lista-agenda"
+                >
+
+                    <!-- Agendamentos aparecem aqui -->
+
+                </div>
+
+            </section>
+
+
+            <!-- SERVIÇOS -->
+
+            <section
+                id="area-servicos"
+                class="area-admin"
+                hidden
+            >
+
+                <h2>Gerenciar serviços</h2>
+
+                <form id="form-servico" class="form-admin">
+
+                    <input
+                        type="text"
+                        id="nome-servico"
+                        placeholder="Nome do serviço"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="descricao-servico"
+                        placeholder="Descrição do serviço"
+                    >
+
+                    <input
+                        type="number"
+                        id="duracao-servico"
+                        placeholder="Duração em minutos"
+                        min="1"
+                        required
+                    >
+
+                    <input
+                        type="number"
+                        id="preco-servico"
+                        placeholder="Preço"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="botao-principal"
+                    >
+                        Cadastrar serviço
+                    </button>
+
+                </form>
+
+
+                <div class="tabela-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Serviço</th>
+                                <th>Duração</th>
+                                <th>Preço</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-servicos-admin">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- BARBEIROS -->
+
+            <section
+                id="area-barbeiros"
+                class="area-admin"
+                hidden
+            >
+
+                <h2>Gerenciar barbeiros</h2>
+
+                <form id="form-barbeiro" class="form-admin">
+
+                    <input
+                        type="text"
+                        id="nome-barbeiro"
+                        placeholder="Nome do barbeiro"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="botao-principal"
+                    >
+                        Cadastrar barbeiro
+                    </button>
+
+                </form>
+
+
+                <div class="tabela-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-barbeiros-admin">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <p
+                id="mensagem-admin"
+                class="mensagem-admin"
+            ></p>
+
+        </div>
+
+    </main>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="adm.js"></script>
+
+</body>
+</html>
