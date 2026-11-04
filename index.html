@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Barbearia Prime | Estilo e Qualidade</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">BARBEARIA <span>PRIME</span></a>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#agendamento">Agendamento</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <span class="subtitulo">ESTILO • QUALIDADE • EXPERIÊNCIA</span>
+
+                <h1>Seu estilo merece o <span>melhor.</span></h1>
+
+                <p>
+                    Mais que um corte, uma experiência.
+                    Cuide do seu visual com profissionais
+                    preparados para você.
+                </p>
+
+                <a href="#agendamento" class="btn-principal">
+                    AGENDAR HORÁRIO
+                </a>
+            </div>
+        </section>
+
+        <section id="servicos" class="secao">
+            <div class="titulo-secao">
+                <span>NOSSOS SERVIÇOS</span>
+                <h2>Qual será seu próximo estilo?</h2>
+                <p>Confira nossos serviços e escolha o ideal para você.</p>
+            </div>
+
+            <div id="lista-servicos" class="servicos-grid">
+                <p>Carregando serviços...</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <div class="sobre-conteudo">
+                <span>SOBRE NÓS</span>
+                <h2>Uma experiência feita para você.</h2>
+
+                <p>
+                    Na Barbearia Prime, acreditamos que cada detalhe
+                    faz diferença. Nosso objetivo é oferecer
+                    atendimento de qualidade, conforto e estilo
+                    para cada cliente.
+                </p>
+            </div>
+        </section>
+
+        <section id="agendamento" class="secao agendamento">
+            <div class="titulo-secao">
+                <span>AGENDE SEU HORÁRIO</span>
+                <h2>Escolha seu atendimento</h2>
+                <p>Selecione o serviço, barbeiro, data e horário.</p>
+            </div>
+
+            <div class="formulario">
+
+                <label for="servico">Serviço</label>
+                <select id="servico" required>
+                    <option value="">Carregando serviços...</option>
+                </select>
+
+                <label for="barbeiro">Barbeiro</label>
+                <select id="barbeiro" required>
+                    <option value="">Qualquer barbeiro disponível</option>
+                </select>
+
+                <label for="data">Data</label>
+                <input type="date" id="data" required>
+
+                <button type="button" id="buscar-horarios"
+                    class="btn-principal">
+                    VER HORÁRIOS DISPONÍVEIS
+                </button>
+
+                <div id="horarios-container" class="horarios-container">
+                    <p>Escolha o serviço e a data para consultar os horários.</p>
+                </div>
+
+                <div id="dados-cliente" hidden>
+
+                    <h3>Seus dados</h3>
+
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome"
+                        placeholder="Digite seu nome" required>
+
+                    <label for="telefone">WhatsApp</label>
+                    <input type="tel" id="telefone"
+                        placeholder="(00) 00000-0000" required>
+
+                    <button type="button" id="confirmar-agendamento"
+                        class="btn-principal">
+                        SOLICITAR AGENDAMENTO
+                    </button>
+
+                </div>
+
+                <div id="mensagem" class="mensagem"></div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <h3>BARBEARIA <span>PRIME</span></h3>
+        <p>Seu estilo, nossa prioridade.</p>
+        <p>© 2026 Barbearia Prime. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
