@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Prime | Tradição e Estilo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="cabecalho">
+    <div class="logo">BARBEARIA <span>PRIME</span></div>
+
+    <nav>
+        <button onclick="voltarInicio()">Início</button>
+        <button onclick="abrirServicos()">Serviços</button>
+        <button onclick="abrirAgendamento()">Agendamento</button>
+    </nav>
+</header>
+
+<!-- TELA INICIAL -->
+<main id="inicio" class="tela ativa">
+
+    <section class="hero">
+        <div class="hero-conteudo">
+            <p class="subtitulo">TRADIÇÃO • ESTILO • QUALIDADE</p>
+
+            <h1>Seu estilo começa<br>na <span>Prime.</span></h1>
+
+            <p>
+                Mais que um corte, uma experiência.
+                Venha conhecer a Barbearia Prime e descubra
+                o verdadeiro significado de cuidar do seu estilo.
+            </p>
+
+            <button class="botao-principal" onclick="abrirAgendamento()">
+                AGENDAR HORÁRIO
+            </button>
+        </div>
+    </section>
+
+    <section class="sobre">
+        <p class="subtitulo">NOSSA ESSÊNCIA</p>
+        <h2>Uma barbearia feita para quem valoriza tradição.</h2>
+
+        <p>
+            Na Barbearia Prime, unimos técnicas tradicionais,
+            atenção aos detalhes e atendimento de qualidade
+            para proporcionar a melhor experiência.
+        </p>
+
+        <button class="botao-secundario" onclick="abrirServicos()">
+            CONHEÇA NOSSOS SERVIÇOS
+        </button>
+    </section>
+
+    <section class="diferenciais">
+        <div>
+            <h3>Tradição</h3>
+            <p>O cuidado clássico de uma verdadeira barbearia.</p>
+        </div>
+
+        <div>
+            <h3>Qualidade</h3>
+            <p>Dedicação em cada corte e acabamento.</p>
+        </div>
+
+        <div>
+            <h3>Estilo</h3>
+            <p>Seu visual merece atenção especial.</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- TELA DE SERVIÇOS -->
+<section id="servicos" class="tela">
+
+    <div class="titulo-tela">
+        <p class="subtitulo">O QUE OFERECEMOS</p>
+        <h1>Nossos Serviços</h1>
+        <p>Escolha o cuidado ideal para você.</p>
+    </div>
+
+    <div id="lista-servicos" class="lista-servicos">
+        Carregando serviços...
+    </div>
+
+    <div class="centralizado">
+        <button class="botao-principal" onclick="abrirAgendamento()">
+            AGENDAR AGORA
+        </button>
+
+        <button class="botao-voltar" onclick="voltarInicio()">
+            VOLTAR AO INÍCIO
+        </button>
+    </div>
+
+</section>
+
+<!-- TELA DE AGENDAMENTO -->
+<section id="agendamento" class="tela">
+
+    <div class="titulo-tela">
+        <p class="subtitulo">RESERVE SEU MOMENTO</p>
+        <h1>Agendamento</h1>
+        <p>Escolha seu serviço e encontre o melhor horário.</p>
+    </div>
+
+    <div class="formulario">
+
+        <label for="servico">Serviço</label>
+        <select id="servico">
+            <option value="">Carregando serviços...</option>
+        </select>
+
+        <label for="barbeiro">Barbeiro</label>
+        <select id="barbeiro">
+            <option value="">Qualquer barbeiro disponível</option>
+        </select>
+
+        <label for="data">Data</label>
+        <input type="date" id="data">
+
+        <button id="buscar-horarios" class="botao-principal">
+            BUSCAR HORÁRIOS
+        </button>
+
+        <div id="horarios-container"></div>
+
+        <div id="dados-cliente" class="dados-cliente">
+
+            <h2>Seus dados</h2>
+
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" placeholder="Digite seu nome">
+
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+
+            <button id="confirmar-agendamento" class="botao-principal">
+                CONFIRMAR AGENDAMENTO
+            </button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+    <div class="centralizado">
+        <button class="botao-voltar" onclick="voltarInicio()">
+            VOLTAR AO INÍCIO
+        </button>
+    </div>
+
+</section>
+
+<footer>
+    <div class="logo">BARBEARIA <span>PRIME</span></div>
+    <p>Tradição e estilo em cada detalhe.</p>
+    <p>© 2026 Barbearia Prime. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+</body>
+</html>v
